@@ -14,27 +14,30 @@ The goal of this assessment was not only to deploy the application, but also to 
 OS: Windows
 Linux Environment: WSL (Ubuntu)
 # Tools Used:
--Docker
--k3s
--kubectl
--Helm
--Git
--VS Code (connected to WSL)
+1. Docker
+2. k3s
+3. kubectl
+4. Helm
+5. Git
+6. VS Code (connected to WSL)
+   
 Why WSL?
 --WSL provides a clean Linux environment while still allowing easy GitHub integration and development from Windows. This setup closely resembles real    cloud VM workflows.
+
 
 ## KUBERNETES CLUSTER
 Kubernetes Distribution: k3s
 Cluster Type: Single-node
 Reason for using k3s:
--Lightweight
--Low resource usage
--Ideal for small teams, demos, and cost-efficient setups
+
+1. Lightweight
+2. Low resource usage
+3. Ideal for small teams, demos, and cost-efficient setups
 
 ## APPLICATION DEPLOYMENT
 # Application
---Open WebUI
---Deployed using Helm
+1. Open WebUI
+2. Deployed using Helm
 # Namespace
 openwebui
 # Deployed Components
