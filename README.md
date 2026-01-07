@@ -43,11 +43,12 @@ openwebui
 # Deployed Components
 The following pods are running successfully:
 ------kubectl get pods -n openwebui--------
+
 Output:
-    open-webui-0
-    open-webui-ollama
-    open-webui-pipelines
-    open-webui-redis
+       open-webui-0
+       open-webui-ollama
+       open-webui-pipelines
+       open-webui-redis
 
 All pods are in Running state with 0 restarts, indicating a healthy deployment.
 
@@ -55,19 +56,19 @@ All pods are in Running state with 0 restarts, indicating a healthy deployment.
 Although no failure occurred during my deployment, the assessment included an intentional failure scenario. Below is my analysis:
 
 Expected Failure:
--Pod stuck in CrashLoopBackOff
--Logs show:
-    x509: certificate signed by unknown authority
-    OIDC discovery endpoint unreachable
--Root Cause
-    OIDC provider uses a self-signed certificate
-    Open WebUI does not trust the custom CA
-    Kubernetes container trust store does not include this CA
+   -Pod stuck in CrashLoopBackOff
+   -Logs show:
+       x509: certificate signed by unknown authority
+       OIDC discovery endpoint unreachable
+   -Root Cause
+       OIDC provider uses a self-signed certificate
+       Open WebUI does not trust the custom CA
+       Kubernetes container trust store does not include this CA
 
 Why It Did Not Occur:
-OIDC integration was not actively enforced with a custom CA in this setup
-Default certificates were trusted by the system
-This demonstrates understanding of failure reasoning even when the issue is not reproduced.
+   OIDC integration was not actively enforced with a custom CA in this setup
+   Default certificates were trusted by the system
+   This demonstrates understanding of failure reasoning even when the issue is not reproduced.
 
 ## What Breaks First? 
 Scenario: Single Node Failure
